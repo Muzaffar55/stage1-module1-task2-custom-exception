@@ -4,10 +4,10 @@ public class StudentManager {
 
     private static final long[] IDs = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
 
-    public class StudentNotFoundException extends RuntimeException {
+    public class StudentNotFoundException extends IllegalArgumentException {
 
-        public StudentNotFoundException(String message, Throwable cause) {
-            super(message, cause);
+        public StudentNotFoundException(String message) {
+            super(message);
         }
     }
 
@@ -16,7 +16,7 @@ public class StudentManager {
             return Student.getValueOf(studentID);
         } catch (IllegalArgumentException e) {
             // Talaba topilmaganida istisno chiqarish
-            throw new StudentNotFoundException("Student not found with ID: " + studentID, e);
+            throw new StudentNotFoundException("Student not found with ID: " + studentID);
         }
     }
 
