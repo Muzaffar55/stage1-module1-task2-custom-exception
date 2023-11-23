@@ -16,7 +16,7 @@ public class StudentManager {
             return Student.getValueOf(studentID);
         } catch (IllegalArgumentException e) {
             // Talaba topilmaganida istisno chiqarish
-            throw new StudentNotFoundException("Student not found with ID: " + studentID);
+            throw new StudentNotFoundException("Could not find student with ID: " + studentID);
         }
     }
 
